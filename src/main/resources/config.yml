@@ -1,0 +1,42 @@
+#the change in hue per period. Should be between 0 and 1
+color_step_size: 0.011111111
+
+#The amount of game ticks equivalent to 1 PartyArmor tick
+#1 makes the color change 20 times per second. 20 Makes the color change once per second
+tick_period: 1
+
+#Enable this to offset the color based on the wearer's uuid
+desync_color: false
+
+#Name: The name of the leather armor piece must match this name
+#Empty name will match any name. Example:
+#helmet:
+#  name: ""
+
+#Lore: The piece MUST contain the lore specified here. It MAY contain other lore. Order does not matter
+#Empty lore will match any lore. Example:
+#helmet:
+#  lore:
+#    -
+
+#Offset: The amount by that a piece's color(hue) should be offset.
+helmet:
+  name: "&aParty Hat"
+  lore:
+    - "&9Party!"
+  offset: 0.0
+chestplate:
+  name: "&aParty Shirt"
+  lore:
+    - "&9Party!"
+  offset: 0.0
+leggings:
+  name: "&aParty Pants"
+  lore:
+    - "&9Party!"
+  offset: 0.0
+boots:
+  name: "&aParty Shoes"
+  lore:
+    - "&9Party!"
+  offset: 0.0

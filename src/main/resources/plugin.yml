@@ -1,0 +1,4 @@
+main: de.selebrator.partyarmor.PartyArmorPlugin
+name: ${plugin_name}
+version: ${plugin_version}
+author: ${author}

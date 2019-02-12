@@ -1,0 +1,52 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+}
+
+dependencies {
+    compile 'org.bukkit:bukkit:1.13.2-R0.1-SNAPSHOT'
+}
+
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
+jar {
+    ext.plugin_version = config.plugin_version
+    if (plugin_version.endsWith('-dev')) {
+        plugin_version = plugin_version + "." + new Date().format('yyyyMMdd.HHmmss')
+    }
+}
+
+group = config.plugin_group + config.plugin_id
+version = project.jar.plugin_version
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "plugin_version", project.jar.plugin_version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'plugin.yml'
+
+        //replace placeholders
+        expand(
+                'plugin_name': project.config.plugin_name,
+                'plugin_version': project.jar.plugin_version,
+                'author': project.config.author
+        )
+    }
+
+    //copy everything else
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'plugin.yml'
+    }
+}
