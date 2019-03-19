@@ -52,49 +52,21 @@ public class PartyArmorPlugin extends JavaPlugin {
 		this.saveDefaultConfig();
 
 		//cashing for speed
-		if(!this.getConfig().contains("helmet", true)) {
-			//deprecated
-			HAT_NAME = colored(this.getConfig().getString("helmet_name"));
-			HAT_LORE = colored(this.getConfig().getStringList("helmet_lore"));
-			HAT_OFFSET = (float) this.getConfig().getDouble("helmet_offset");
-		} else {
-			HAT_NAME = colored(this.getConfig().getString("helmet.name"));
-			HAT_LORE = colored(this.getConfig().getStringList("helmet.lore"));
-			HAT_OFFSET = (float) this.getConfig().getDouble("helmet.offset");
-		}
+		HAT_NAME = colored(this.getConfig().getString("helmet.name"));
+		HAT_LORE = colored(this.getConfig().getStringList("helmet.lore"));
+		HAT_OFFSET = (float) this.getConfig().getDouble("helmet.offset");
 
-		if(!this.getConfig().contains("chestplate", true)) {
-			//deprecated
-			SHIRT_NAME = colored(this.getConfig().getString("chestplate_name"));
-			SHIRT_LORE = colored(this.getConfig().getStringList("chestplate_lore"));
-			SHIRT_OFFSET = (float) this.getConfig().getDouble("chestplate_offset");
-		} else {
-			SHIRT_NAME = colored(this.getConfig().getString("chestplate.name"));
-			SHIRT_LORE = colored(this.getConfig().getStringList("chestplate.lore"));
-			SHIRT_OFFSET = (float) this.getConfig().getDouble("chestplate.offset");
-		}
+		SHIRT_NAME = colored(this.getConfig().getString("chestplate.name"));
+		SHIRT_LORE = colored(this.getConfig().getStringList("chestplate.lore"));
+		SHIRT_OFFSET = (float) this.getConfig().getDouble("chestplate.offset");
 
-		if(!this.getConfig().contains("leggings", true)) {
-			//deprecated
-			PANTS_NAME = colored(this.getConfig().getString("leggings_name"));
-			PANTS_LORE = colored(this.getConfig().getStringList("leggings_lore"));
-			PANTS_OFFSET = (float) this.getConfig().getDouble("leggings_offset");
-		} else {
-			PANTS_NAME = colored(this.getConfig().getString("leggings.name"));
-			PANTS_LORE = colored(this.getConfig().getStringList("leggings.lore"));
-			PANTS_OFFSET = (float) this.getConfig().getDouble("leggings.offset");
-		}
+		PANTS_NAME = colored(this.getConfig().getString("leggings.name"));
+		PANTS_LORE = colored(this.getConfig().getStringList("leggings.lore"));
+		PANTS_OFFSET = (float) this.getConfig().getDouble("leggings.offset");
 
-		if(!this.getConfig().contains("boots", true)) {
-			//deprecated
-			SHOES_NAME = colored(this.getConfig().getString("boots_name"));
-			SHOES_LORE = colored(this.getConfig().getStringList("boots_lore"));
-			SHOES_OFFSET = (float) this.getConfig().getDouble("boots_offset");
-		} else {
-			SHOES_NAME = colored(this.getConfig().getString("boots.name"));
-			SHOES_LORE = colored(this.getConfig().getStringList("boots.lore"));
-			SHOES_OFFSET = (float) this.getConfig().getDouble("boots.offset");
-		}
+		SHOES_NAME = colored(this.getConfig().getString("boots.name"));
+		SHOES_LORE = colored(this.getConfig().getStringList("boots.lore"));
+		SHOES_OFFSET = (float) this.getConfig().getDouble("boots.offset");
 
 		STEP_SIZE = (float) this.getConfig().getDouble("color_step_size");
 		DESYNC_COLOR = this.getConfig().getBoolean("desync_color");
